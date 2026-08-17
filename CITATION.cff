@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this repository."
+title: "Colony Segmentation with Classical Image Processing and SAM2"
+version: "0.1.0"
+date-released: "2026-08-17"
+authors:
+  - name: "朱华玮"
+repository-code: "https://github.com/zhuhw0916/colony-segmentation-sam2"
+license: "MIT"
+keywords:
+  - image-segmentation
+  - SAM2
+  - computer-vision
+  - colony-counting

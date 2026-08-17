@@ -1,0 +1,5 @@
+# Runtime dependencies. SAM2 source and checkpoints are installed separately.
+numpy>=1.24
+opencv-python>=4.8
+scikit-image>=0.20
+torch>=2.0

@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "colony-segmentation-sam2"
+version = "0.1.0"
+description = "Classical image processing and SAM2 tools for bacterial colony segmentation and counting"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "朱华玮" }]
+keywords = ["image-segmentation", "SAM2", "computer-vision", "colony-counting"]
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python>=4.8",
+    "scikit-image>=0.20",
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0",
+    "pytest>=7.0",
+]
+
+[project.scripts]
+colony-traditional = "traditional_benchmark:main"
+colony-sam2-benchmark = "sam2_benchmark:main"
+colony-sam2-pipeline = "sam2_pipeline:main"
+
+[project.urls]
+Homepage = "https://github.com/zhuhw0916/colony-segmentation-sam2"
+Repository = "https://github.com/zhuhw0916/colony-segmentation-sam2"
+Issues = "https://github.com/zhuhw0916/colony-segmentation-sam2/issues"
+
+[tool.setuptools]
+py-modules = [
+    "sam2_common",
+    "sam2_benchmark",
+    "sam2_pipeline",
+    "traditional_benchmark",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
