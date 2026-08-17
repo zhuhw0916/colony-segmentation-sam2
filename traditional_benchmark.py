@@ -1,4 +1,4 @@
-"""Traditional image-processing methods for bacterial colony counting."""
+"""Traditional image-processing methods for microbial colony counting."""
 
 from __future__ import annotations
 

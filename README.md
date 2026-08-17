@@ -1,16 +1,39 @@
-# Colony Segmentation with Classical Vision and SAM2
+# High-Throughput Microbial Colony Image Analysis
 
 [![CI](https://github.com/zhuhw0916/colony-segmentation-sam2/actions/workflows/ci.yml/badge.svg)](https://github.com/zhuhw0916/colony-segmentation-sam2/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This repository provides reproducible baselines and SAM2 inference utilities
-for bacterial colony segmentation and counting. It contains source code and
-tests only: image datasets, ground-truth files, model checkpoints, SAM2
-source, and generated results are intentionally kept outside the repository.
+This repository provides the image-analysis module of a reproducible SOP for
+high-throughput microbial colony imaging. It includes tools for image
+preprocessing, colony segmentation, colony enumeration, and quantitative
+benchmarking of traditional computer-vision and SAM2-based methods. The
+workflow converts microbial colony images into quantitative segmentation and
+counting results for downstream microbiological analysis.
 
-The code is designed to be used as a component in a larger image-analysis or
-multimodal project. It does not perform species classification or downstream
-multimodal analysis.
+The repository contains source code and tests only: image datasets,
+ground-truth files, model checkpoints, SAM2 source, and generated results are
+intentionally kept outside the repository.
+
+## Scope
+
+This repository covers the image-analysis stage of the SOP, including image
+preprocessing, segmentation, enumeration, and method evaluation. Wet-lab
+experimental procedures, species identification, and downstream statistical
+or multimodal analyses are outside the scope of this repository.
+
+## Workflow position
+
+```text
+High-throughput images
+        ↓
+Image preprocessing
+        ↓
+Colony segmentation
+        ↓
+Colony enumeration and method evaluation
+        ↓
+Counts, masks, overlays, and benchmark metrics
+```
 
 ## Contents
 

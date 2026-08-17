@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite this repository."
-title: "Colony Segmentation with Classical Image Processing and SAM2"
+title: "High-Throughput Microbial Colony Image Analysis"
 version: "0.1.0"
 date-released: "2026-08-17"
 authors:

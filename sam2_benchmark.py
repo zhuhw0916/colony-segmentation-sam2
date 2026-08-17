@@ -1,4 +1,4 @@
-"""SAM2 automatic-mask benchmark for bacterial colony counting."""
+"""SAM2 automatic-mask benchmark for microbial colony counting."""
 
 from __future__ import annotations
 

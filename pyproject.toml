@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "colony-segmentation-sam2"
 version = "0.1.0"
-description = "Classical image processing and SAM2 tools for bacterial colony segmentation and counting"
+description = "Image-analysis tools for high-throughput microbial colony segmentation, enumeration, and benchmarking"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
