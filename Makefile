@@ -4,9 +4,9 @@ test:
 	python -m pytest -q
 
 format:
-	black .
+	black src tests
 
 check:
-	python -m compileall -q .
+	python -m compileall -q src tests
 	python -m pytest -q
-	black --check .
+	black --check src tests

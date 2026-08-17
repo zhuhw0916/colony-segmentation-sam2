@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from traditional_benchmark import METHODS, compute_metrics
+from colony_segmentation.traditional_benchmark import METHODS, compute_metrics
 
 
 def test_traditional_method_registry_is_complete():

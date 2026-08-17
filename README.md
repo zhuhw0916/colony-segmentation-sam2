@@ -35,15 +35,29 @@ Colony enumeration and method evaluation
 Counts, masks, overlays, and benchmark metrics
 ```
 
+## Repository layout
+
+- `src/colony_segmentation/`: reusable image-analysis modules and command-line
+  entry points.
+- `tests/`: CPU-only unit tests for preprocessing, postprocessing, metrics, and
+  traditional methods.
+- `.github/`: continuous integration and contribution templates.
+- Root-level documentation and metadata: the SOP context, citation record,
+  license, dependency notices, and development guidance.
+
 ## Contents
 
-- `traditional_benchmark.py`: Otsu, adaptive thresholding, watershed, DoG,
+- `src/colony_segmentation/traditional_benchmark.py`: Otsu, adaptive
+  thresholding, watershed, DoG,
   LoG, morphology, and HSV connected-component/blob counting.
-- `sam2_benchmark.py`: SAM2 Tiny trained/base automatic-mask inference with
+- `src/colony_segmentation/sam2_benchmark.py`: SAM2 Tiny trained/base
+  automatic-mask inference with
   the tuned colony postprocessing chain and optional preprocessing variants.
-- `sam2_pipeline.py`: saves filtered masks as `.json.gz`, a count CSV, and
+- `src/colony_segmentation/sam2_pipeline.py`: saves filtered masks as `.json.gz`,
+  a count CSV, and
   optional mask overlays.
-- `sam2_common.py`: shared parameters, preprocessing, postprocessing, and
+- `src/colony_segmentation/sam2_common.py`: shared parameters, preprocessing,
+  postprocessing, and
   evaluation helpers.
 
 Repository maintenance files include `pyproject.toml`, `LICENSE`, tests,
@@ -82,10 +96,10 @@ sample_001,24
 
 ## Traditional image processing
 
-From the project root:
+From the project root, after installation:
 
 ```bash
-python traditional_benchmark.py \
+python -m colony_segmentation.traditional_benchmark \
   --image-dir all_pic \
   --gt-csv data/merged.csv \
   --output results/benchmark_traditional.csv
@@ -110,7 +124,7 @@ vendored here. The default postprocessing values are:
 Example using both the trained and base checkpoints:
 
 ```bash
-python sam2_benchmark.py \
+python -m colony_segmentation.sam2_benchmark \
   --image-dir all_pic \
   --gt-csv data/merged.csv \
   --sam2-repo /path/to/sam2 \
@@ -128,7 +142,7 @@ use `--model trained` or `--model base` and provide the corresponding path.
 ## SAM2 mask export
 
 ```bash
-python sam2_pipeline.py \
+python -m colony_segmentation.sam2_pipeline \
   --image-dir all_pic \
   --sam2-repo /path/to/sam2 \
   --checkpoint /path/to/sam2_hiera_tiny.pt \

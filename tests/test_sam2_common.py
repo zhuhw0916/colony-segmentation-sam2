@@ -1,7 +1,11 @@
 import cv2
 import numpy as np
 
-from sam2_common import PREPROCESS, compute_metrics, postprocess_sam2_masks
+from colony_segmentation.sam2_common import (
+    PREPROCESS,
+    compute_metrics,
+    postprocess_sam2_masks,
+)
 
 
 def test_preprocessing_variants_preserve_image_shape():

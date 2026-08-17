@@ -170,7 +170,7 @@ def _write_results(
 
 
 def _default_paths() -> tuple[Path, Path, Path]:
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = Path.cwd()
     return (
         project_root / "all_pic",
         project_root / "data" / "merged.csv",

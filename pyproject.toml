@@ -25,22 +25,17 @@ dev = [
 ]
 
 [project.scripts]
-colony-traditional = "traditional_benchmark:main"
-colony-sam2-benchmark = "sam2_benchmark:main"
-colony-sam2-pipeline = "sam2_pipeline:main"
+colony-traditional = "colony_segmentation.traditional_benchmark:main"
+colony-sam2-benchmark = "colony_segmentation.sam2_benchmark:main"
+colony-sam2-pipeline = "colony_segmentation.sam2_pipeline:main"
 
 [project.urls]
 Homepage = "https://github.com/zhuhw0916/colony-segmentation-sam2"
 Repository = "https://github.com/zhuhw0916/colony-segmentation-sam2"
 Issues = "https://github.com/zhuhw0916/colony-segmentation-sam2/issues"
 
-[tool.setuptools]
-py-modules = [
-    "sam2_common",
-    "sam2_benchmark",
-    "sam2_pipeline",
-    "traditional_benchmark",
-]
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.black]
 line-length = 88

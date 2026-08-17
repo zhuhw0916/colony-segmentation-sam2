@@ -196,10 +196,9 @@ def run_pipeline(
 
 
 def main() -> None:
-    project_root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--image-dir", required=True)
-    parser.add_argument("--output-dir", default=project_root / "sam2_output")
+    parser.add_argument("--output-dir", default=Path.cwd() / "sam2_output")
     parser.add_argument("--checkpoint", required=True)
     parser.add_argument("--gt-csv", default=None)
     parser.add_argument("--sam2-repo", default=os.environ.get("SAM2_REPO"))
