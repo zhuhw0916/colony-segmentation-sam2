@@ -79,7 +79,8 @@ python -m pip install -e ".[dev]"
 
 The benchmark environment can also be managed with conda. SAM2 is not
 installed by this repository; use an existing SAM2 checkout and pass its path
-with `--sam2-repo`.
+with `--sam2-repo`. The SAM2 source reference, observed dependency versions,
+and license boundary are recorded in `THIRD_PARTY_NOTICES.md`.
 
 ## Data format
 
@@ -160,9 +161,9 @@ The pipeline writes one compressed mask file per image under `masks/`, a
 The CPU-only tests do not require a SAM2 checkpoint:
 
 ```bash
-python -m compileall -q .
+python -m compileall -q src tests
 python -m pytest -q
-black --check .
+black --check src tests
 ```
 
 The SAM2 commands require a compatible PyTorch/CUDA environment, a SAM2
@@ -174,6 +175,18 @@ parameters or output formats.
 If you use this repository in academic work, please cite the associated paper
 when it is published. Until the paper metadata is available, the repository's
 `CITATION.cff` file provides the software citation record.
+
+If you use the SAM2-based methods, also cite the SAM 2 paper:
+
+```bibtex
+@article{ravi2024sam2,
+  title={SAM 2: Segment Anything in Images and Videos},
+  author={Ravi, Nikhila and Gabeur, Valentin and Hu, Yuan-Ting and Hu, Ronghang and Ryali, Chaitanya and Ma, Tengyu and Khedr, Haitham and R{\"a}dle, Roman and Rolland, Chloe and Gustafson, Laura and Mintun, Eric and Pan, Junting and Alwala, Kalyan Vasudev and Carion, Nicolas and Wu, Chao-Yuan and Girshick, Ross and Doll{\'a}r, Piotr and Feichtenhofer, Christoph},
+  journal={arXiv preprint arXiv:2408.00714},
+  url={https://arxiv.org/abs/2408.00714},
+  year={2024}
+}
+```
 
 ## License and third-party software
 
