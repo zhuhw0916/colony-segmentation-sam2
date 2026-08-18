@@ -18,9 +18,9 @@ project's installation and model-download instructions separately.
 Run the same checks used by continuous integration:
 
 ```bash
-python -m compileall -q .
+python -m compileall -q src tests
 python -m pytest -q
-black --check .
+black --check src tests
 ```
 
 Keep datasets, model checkpoints, generated masks, benchmark CSVs, logs, and

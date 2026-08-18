@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "colony-segmentation-sam2"
-version = "0.1.0"
-description = "Image-analysis tools for high-throughput microbial colony segmentation, enumeration, and benchmarking"
+version = "0.2.0"
+description = "SAM2-based image-analysis tools for high-throughput microbial colony segmentation and enumeration"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -14,7 +14,6 @@ keywords = ["image-segmentation", "SAM2", "computer-vision", "colony-counting"]
 dependencies = [
     "numpy>=1.24",
     "opencv-python>=4.8",
-    "scikit-image>=0.20",
     "torch>=2.0",
 ]
 
@@ -25,7 +24,6 @@ dev = [
 ]
 
 [project.scripts]
-colony-traditional = "colony_segmentation.traditional_benchmark:main"
 colony-sam2-benchmark = "colony_segmentation.sam2_benchmark:main"
 colony-sam2-pipeline = "colony_segmentation.sam2_pipeline:main"
 

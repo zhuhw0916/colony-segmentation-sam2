@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite this repository."
-title: "High-Throughput Microbial Colony Image Analysis"
-version: "0.1.0"
-date-released: "2026-08-17"
+title: "High-Throughput Microbial Colony Image Analysis with SAM2"
+version: "0.2.0"
+date-released: "2026-08-18"
 authors:
   - name: "朱华玮"
 repository-code: "https://github.com/zhuhw0916/colony-segmentation-sam2"

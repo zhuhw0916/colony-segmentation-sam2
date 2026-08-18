@@ -37,7 +37,7 @@ except ImportError:  # pragma: no cover - used by direct script execution.
 
 
 def _load_sam2(sam2_repo: str | Path | None):
-    """Import SAM2 lazily so traditional methods do not require torch/SAM2."""
+    """Import SAM2 lazily so CPU-only utilities do not require SAM2."""
 
     if sam2_repo:
         repo = str(Path(sam2_repo).expanduser().resolve())

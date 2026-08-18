@@ -5,10 +5,10 @@
 
 This repository provides the image-analysis module of a reproducible SOP for
 high-throughput microbial colony imaging. It includes tools for image
-preprocessing, colony segmentation, colony enumeration, and quantitative
-benchmarking of traditional computer-vision and SAM2-based methods. The
-workflow converts microbial colony images into quantitative segmentation and
-counting results for downstream microbiological analysis.
+preprocessing, SAM2-based colony segmentation, colony enumeration, and
+quantitative evaluation. The workflow converts microbial colony images into
+quantitative segmentation and counting results for downstream microbiological
+analysis.
 
 The repository contains source code and tests only: image datasets,
 ground-truth files, model checkpoints, SAM2 source, and generated results are
@@ -17,9 +17,9 @@ intentionally kept outside the repository.
 ## Scope
 
 This repository covers the image-analysis stage of the SOP, including image
-preprocessing, segmentation, enumeration, and method evaluation. Wet-lab
-experimental procedures, species identification, and downstream statistical
-or multimodal analyses are outside the scope of this repository.
+preprocessing, SAM2 segmentation, enumeration, and SAM2 method evaluation.
+Wet-lab experimental procedures, species identification, and downstream
+statistical or multimodal analyses are outside the scope of this repository.
 
 ## Workflow position
 
@@ -30,7 +30,7 @@ Image preprocessing
         ↓
 Colony segmentation
         ↓
-Colony enumeration and method evaluation
+SAM2 inference, colony enumeration, and evaluation
         ↓
 Counts, masks, overlays, and benchmark metrics
 ```
@@ -40,16 +40,13 @@ Counts, masks, overlays, and benchmark metrics
 - `src/colony_segmentation/`: reusable image-analysis modules and command-line
   entry points.
 - `tests/`: CPU-only unit tests for preprocessing, postprocessing, metrics, and
-  traditional methods.
+  SAM2-related utilities.
 - `.github/`: continuous integration and contribution templates.
 - Root-level documentation and metadata: the SOP context, citation record,
   license, dependency notices, and development guidance.
 
 ## Contents
 
-- `src/colony_segmentation/traditional_benchmark.py`: Otsu, adaptive
-  thresholding, watershed, DoG,
-  LoG, morphology, and HSV connected-component/blob counting.
 - `src/colony_segmentation/sam2_benchmark.py`: SAM2 Tiny trained/base
   automatic-mask inference with
   the tuned colony postprocessing chain and optional preprocessing variants.
@@ -93,17 +90,6 @@ For a labelled image named `sample_001.png`, the CSV row is:
 ```csv
 filename,count_after
 sample_001,24
-```
-
-## Traditional image processing
-
-From the project root, after installation:
-
-```bash
-python -m colony_segmentation.traditional_benchmark \
-  --image-dir all_pic \
-  --gt-csv data/merged.csv \
-  --output results/benchmark_traditional.csv
 ```
 
 ## SAM2 benchmark
@@ -191,6 +177,6 @@ If you use the SAM2-based methods, also cite the SAM 2 paper:
 ## License and third-party software
 
 The original code in this repository is released under the MIT License. This
-license does not relicense SAM2, PyTorch, NumPy, OpenCV, scikit-image, model
-checkpoints, or datasets. See `THIRD_PARTY_NOTICES.md` for the dependency
-licenses and attribution links.
+license does not relicense SAM2, PyTorch, Torchvision, NumPy, OpenCV, model
+checkpoints, datasets, or SAM2's own dependencies. See
+`THIRD_PARTY_NOTICES.md` for the dependency licenses and attribution links.

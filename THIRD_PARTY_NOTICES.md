@@ -19,8 +19,6 @@ reproducibility record rather than a lock file.
 | [Torchvision](https://github.com/pytorch/vision) | `0.22.1+cu128` | SAM2/PyTorch model support | [BSD-style license](https://github.com/pytorch/vision/blob/main/LICENSE) |
 | [NumPy](https://github.com/numpy/numpy) | `2.2.6` | Array and metric operations | [BSD-3-Clause](https://github.com/numpy/numpy/blob/main/LICENSE.txt) and bundled notices |
 | [OpenCV](https://github.com/opencv/opencv-python) | `4.13.0.92` | Image I/O and image processing | [Apache License 2.0](https://github.com/opencv/opencv-python/blob/master/LICENSE.txt) |
-| [scikit-image](https://github.com/scikit-image/scikit-image) | `0.25.2` | DoG and LoG blob detection | [BSD-3-Clause](https://github.com/scikit-image/scikit-image/blob/main/LICENSE.txt) |
-| [SciPy](https://github.com/scipy/scipy) | `1.15.3` | Numerical dependency used by scikit-image | [BSD-3-Clause](https://github.com/scipy/scipy/blob/main/LICENSE.txt) |
 
 The external SAM2 installation has additional dependencies, including
 `tqdm`, `hydra-core`, `iopath`, and `Pillow`. Their versions and license
